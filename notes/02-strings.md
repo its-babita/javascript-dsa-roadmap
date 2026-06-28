@@ -189,3 +189,114 @@ Next concepts that build on strings:
 * Two Pointers
 * Sliding Window
 * Recursion
+
+
+## Two Pointers
+
+The Two Pointer technique uses two indices (or pointers) to traverse a string or array efficiently.
+
+Instead of creating a new string or array, we compare or process elements from both ends (or sometimes from the same direction).
+
+### When to Use
+
+* Check if a string is a palindrome
+* Reverse a string in-place
+* Reverse only letters
+* Reverse vowels in a string
+* Compare characters from both ends
+
+### Opposite-End Two Pointers
+
+```text
+String: madam
+
+L       R
+m a d a m
+
+Compare m and m ✓
+
+  L   R
+m a d a m
+
+Compare a and a ✓
+
+    LR
+m a d a m
+
+Pointers meet → Palindrome
+```
+
+### Template
+
+```js
+let left = 0;
+let right = str.length - 1;
+
+while (left < right) {
+  // Compare characters
+
+  left++;
+  right--;
+}
+```
+
+### Why Two Pointers?
+
+Using `split('').reverse().join('')` creates additional memory because it builds new arrays and a new string.
+
+The Two Pointer approach compares characters directly without creating another string.
+
+### Complexity
+
+| Operation | Complexity |
+| --------- | ---------- |
+| Time      | O(n)       |
+| Space     | O(1)       |
+
+### Common Mistakes
+
+❌ Using `right = str.length`
+
+```js
+let right = str.length;
+```
+
+✔ Correct
+
+```js
+let right = str.length - 1;
+```
+
+---
+
+❌ Comparing indices
+
+```js
+left === right
+```
+
+✔ Compare characters
+
+```js
+str[left] === str[right]
+```
+
+---
+
+❌ Forgetting to move pointers
+
+```js
+left++;
+right--;
+```
+
+This causes an infinite loop if omitted.
+
+### Problems Using This Pattern
+
+* Valid Palindrome
+* Reverse String (without built-ins)
+* Reverse Only Letters
+* Reverse Vowels of a String
+* Merge Strings Alternately
+
