@@ -300,3 +300,41 @@ This causes an infinite loop if omitted.
 * Reverse Vowels of a String
 * Merge Strings Alternately
 
+
+## Hashing
+
+Hashing stores data as **key-value pairs**, allowing fast lookup, insertion, and updates.
+
+### Why Use Hashing?
+
+Instead of scanning the string multiple times, we store the frequency of each character once and reuse it.
+
+### JavaScript Hash Map
+
+```js
+const frequency = {};
+```
+
+Example:
+
+```js
+{
+  b: 1,
+  a: 3,
+  n: 2
+}
+```
+
+### Common Use Cases
+
+- Character Frequency
+- Count Occurrences
+- First Non-Repeating Character
+- First Repeating Character
+- Valid Anagram
+- Most Frequent Character
+
+### Complexity
+
+- Time: O(n)
+- Space: O(n)
